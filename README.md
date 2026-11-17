@@ -19,6 +19,7 @@ Open `http://localhost:8000` in a browser to add, complete, and delete todos usi
 | Method | Path | Description |
 | --- | --- | --- |
 | `GET` | `/health` | Health check |
+| `GET` | `/version` | API version |
 | `GET` | `/todos` | List todos |
 | `POST` | `/todos` | Create a todo with `{"title":"Buy milk"}` |
 | `GET` | `/todos/{id}` | Get a todo |

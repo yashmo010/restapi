@@ -79,6 +79,9 @@ class TodoApiTests(unittest.TestCase):
     def test_health_endpoint(self):
         self.assertEqual(self.request("GET", "/health"), (200, {"status": "ok"}))
 
+    def test_version_endpoint(self):
+        self.assertEqual(self.request("GET", "/version"), (200, {"version": "1.0.1"}))
+
     def test_homepage_serves_todo_app(self):
         connection = http.client.HTTPConnection("127.0.0.1", self.port)
         connection.request("GET", "/")

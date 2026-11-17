@@ -89,6 +89,8 @@ class TodoHandler(BaseHTTPRequestHandler):
             return
         if path == "/health":
             return self._send_json(200, {"status": "ok"})
+        if path == "/version":
+            return self._send_json(200, {"version": "1.0.1"})
         if path == "/todos":
             with _lock:
                 return self._send_json(200, list(_todos.values()))
