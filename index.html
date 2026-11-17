@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Todo List</title>
+</head>
+<body>
+  <main>
+    <h1>Todo List</h1>
+    <p>A simple app powered by the Todo REST API.</p>
+    <form action="/" method="post">
+      <label for="title">New todo:</label>
+      <input id="title" name="title" type="text" maxlength="200" required>
+      <button type="submit">Add todo</button>
+    </form>
+    <p><!-- MESSAGE --></p>
+    <ul>
+      <!-- TODO_ITEMS -->
+    </ul>
+    <p>API endpoint: <a href="/todos">GET /todos</a> | <a href="/health">Health</a></p>
+  </main>
+</body>
+</html>
