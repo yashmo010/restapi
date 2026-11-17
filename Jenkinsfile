@@ -14,19 +14,37 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'python3 -m compileall -q app.py package.py'
+                script {
+                    if (isUnix()) {
+                        sh 'python3 -m compileall -q app.py package.py'
+                    } else {
+                        bat 'python -m compileall -q app.py package.py'
+                    }
+                }
             }
         }
 
         stage('Test') {
             steps {
-                sh 'python3 -m unittest -v'
+                script {
+                    if (isUnix()) {
+                        sh 'python3 -m unittest -v'
+                    } else {
+                        bat 'python -m unittest -v'
+                    }
+                }
             }
         }
 
         stage('Package') {
             steps {
-                sh 'python3 package.py'
+                script {
+                    if (isUnix()) {
+                        sh 'python3 package.py'
+                    } else {
+                        bat 'python package.py'
+                    }
+                }
             }
         }
     }
