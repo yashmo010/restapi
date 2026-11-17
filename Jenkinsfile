@@ -18,7 +18,7 @@ pipeline {
                     if (isUnix()) {
                         sh 'python3 -m compileall -q app.py package.py'
                     } else {
-                        bat 'python -m compileall -q app.py package.py'
+                        bat '"%PYTHON_EXE%" -m compileall -q app.py package.py'
                     }
                 }
             }
@@ -30,7 +30,7 @@ pipeline {
                     if (isUnix()) {
                         sh 'python3 -m unittest -v'
                     } else {
-                        bat 'python -m unittest -v'
+                        bat '"%PYTHON_EXE%" -m unittest -v'
                     }
                 }
             }
@@ -42,7 +42,7 @@ pipeline {
                     if (isUnix()) {
                         sh 'python3 package.py'
                     } else {
-                        bat 'python package.py'
+                        bat '"%PYTHON_EXE%" package.py'
                     }
                 }
             }

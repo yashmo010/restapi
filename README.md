@@ -36,4 +36,4 @@ The package command creates `dist/todo-api.zip`.
 
 ## Jenkins
 
-Create a Jenkins Pipeline or Multibranch Pipeline job connected to this repository. The declarative `Jenkinsfile` checks out the configured SCM, compiles the Python files, runs the unit tests, packages the application, and archives `dist/todo-api.zip` as a fingerprinted build artifact. The pipeline uses `python3` on Unix agents and `python` on Windows agents, so Python must be installed and available on the agent's PATH.
+Create a Jenkins Pipeline or Multibranch Pipeline job connected to this repository. The declarative `Jenkinsfile` checks out the configured SCM, compiles the Python files, runs the unit tests, packages the application, and archives `dist/todo-api.zip` as a fingerprinted build artifact. Unix agents need `python3` on their PATH. On Windows agents, configure the node environment variable `PYTHON_EXE` with the full path to `python.exe`.
